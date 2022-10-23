@@ -1,0 +1,56 @@
+
+  {
+    "header": {
+      "report_date": "20220704",
+      "total_number_customer_records": 2
+    },
+    "customers": [
+      {
+        "ID": "BG",
+        "FirstName": "Ivan",
+        "LastName": "Petrov",
+        "EGN": "2018762232",
+        "Emails": [
+          {
+            "Email": "ivan.petrov@mail.bg"
+          }
+        ],
+        "Phones": [
+          {
+            "Phone": "+359878662446"
+          }
+        ],
+        "DateOfBirth": "20011217",
+        "Addresses": [
+          {
+            "CountryCode": "BG",
+            "City": "Sofia",
+            "Address": "bul.Botevgradsko sose 264"
+          }
+        ]
+      },
+      {
+        "ID": "BG",
+        "FirstName": "Maria",
+        "LastName": "Ivanova",
+        "EGN": "1018762242",
+        "Emails": [
+          { "Email": "maria.ivanova@mail.bg" },
+          { "Email": "maria.petrova@mail.bg" }
+        ],
+        "Phones": [
+          {
+            "Phone": "+359878662446"
+          }
+        ],
+        "DateOfBirth": "19921217",
+        "Addresses": [
+          {
+            "CountryCode": "BG",
+            "City": "Varna",
+            "Address": "bul.Levski 21"
+          }
+        ]
+      }
+    ]
+  }

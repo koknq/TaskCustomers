@@ -1,0 +1,69 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Customers";
+}
+
+
+@using (Html.BeginForm("Import", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+        <input type="submit" value="Upload"/>
+        @ViewBag.Message
+    </div>
+}
+
+<table class="customers-table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>EGN</th>
+            <th>ID</th>
+            <th>DOB</th>
+            <th>Emails</th>
+            <th>Phones</th>
+            <th>CountryCode</th>
+            <th>City</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+        <tr>
+            <td>
+                @customer.FirstName
+            </td>
+            <td>
+                @customer.LastName
+            </td>
+            <td>
+                @customer.EGN
+            </td>
+            <td>
+                @customer.ID
+            </td>
+            <td>
+                @customer.DateOfBirth
+            </td>
+            <td>
+                @string.Join("\n", customer.Emails.Select(x => x.Value))
+            </td>
+            <td>
+                @string.Join("\n", customer.Phones.Select(x => x.Value))
+            </td>
+            <td>
+                @string.Join("\n", customer.Addresses.Select(x => x.CountryCode))
+            </td>
+            <td>
+                @string.Join("\n", customer.Addresses.Select(x => x.City))
+            </td>
+            <td>
+                @string.Join("\n", customer.Addresses.Select(x => x.Value))
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
